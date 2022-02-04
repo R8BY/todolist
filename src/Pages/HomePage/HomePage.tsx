@@ -3,8 +3,8 @@ import classes from "HomePage.module.scss"
 
 const HomePage = () => {
     return (
-        <div>
-            Home Page
+        <div className={classes.todo_items}>
+
         </div>
     );
 };

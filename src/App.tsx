@@ -7,7 +7,7 @@ import {
 } from "react-router-dom";
 import {HomePage} from "./Pages/HomePage";
 import {ItemsPage} from "./Pages/ItemsPage";
-import { BadPage } from "./Pages/404";
+import {BadPage} from "./Pages/404";
 
 function App() {
     return (
