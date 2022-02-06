@@ -1,20 +1,22 @@
 import React, {ChangeEvent} from 'react';
-import '../../App.scss';
+import classes from './HomePage.module.scss';
 import {
     Link
 } from "react-router-dom";
+import {ITask} from "../../Interfaces";
 
 interface Props {
     handleChange(event: ChangeEvent<HTMLInputElement>): void;
     addTask(): void;
     tag:string;
     task:string;
+    todoList: ITask[];
 }
 
-const HomePage = ({handleChange, addTask, tag, task}:Props) => {
+const HomePage = ({handleChange, addTask, tag, task, todoList}:Props) => {
     return (
-        <div className="header">
-            <div className="inputContainer">
+        <div className={classes.header}>
+            <div className={classes.inputContainer}>
                 <input
                     type="text"
                     placeholder="Task..."
@@ -29,8 +31,11 @@ const HomePage = ({handleChange, addTask, tag, task}:Props) => {
                     value={tag}
                     onChange={handleChange}
                 />
+                <Link to={"items"} className={classes.linkToItems} onClick={addTask}>Add Task</Link>
+                {todoList.length > 0 ?
+                    <Link to={"items"} className={classes.linkToItems}>Go to items</Link>
+                    : null }
             </div>
-            <button onClick={addTask}><Link to={"items"}>Add Task</Link></button>
         </div>
     );
 };

@@ -1,7 +1,11 @@
 import React from 'react';
 import {ITask} from "../../Interfaces";
 import {TodoTask} from "../Header";
-import '../../App.scss';
+import classes from './CompleteTask.module.scss'
+import c from '../../Pages/HomePage/HomePage.module.scss'
+import {
+    Link
+} from "react-router-dom";
 
 interface Props{
     todoList: ITask[];
@@ -10,10 +14,11 @@ interface Props{
 
 const CompleteTask = ({todoList, completeTask}:Props) => {
     return (
-        <div className="todoList">
+        <div className={classes.todoList}>
             {todoList.map((task: ITask, key: number) => {
                 return <TodoTask key={key} task={task} completeTask={completeTask}/>
             })}
+            <Link to={"/"} className={c.linkToItems}>Go to Home page</Link>
         </div>
     );
 };

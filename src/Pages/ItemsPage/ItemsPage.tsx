@@ -1,5 +1,4 @@
 import React from 'react';
-// import classes from "./ItemsPage.module.scss";
 import CompleteTask from "../../components/CompleteTask/CompleteTask";
 import {ITask} from "../../Interfaces";
 

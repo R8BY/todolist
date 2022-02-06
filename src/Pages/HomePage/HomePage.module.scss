@@ -1,3 +1,48 @@
-.todo_items{
+.todo_items {
   text-align: center;
+}
+
+.header {
+  flex: 30%;
+  background-color: rgb(30, 30, 30);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .inputContainer {
+    display: flex;
+    flex-direction: column;
+
+    .linkToItems {
+      text-align: center;
+      border-radius: 5px;
+      height: 40px;
+      padding-top: 20px;
+      background-color: #4192de;
+      margin-top: 15px;
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+    }
+
+    button {
+      height: 88px;
+      border: none;
+      cursor: pointer;
+      background-color: #4192de;
+      border-radius: 5px;
+      margin-top: 15px;
+    }
+
+    input {
+      width: 200px;
+      height: 40px;
+      padding-left: 10px;
+      font-size: 17px;
+      border-radius: 5px;
+      border: 1px solid grey;
+      margin-top: 15px;
+    }
+  }
 }

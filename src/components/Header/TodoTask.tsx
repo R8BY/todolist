@@ -1,6 +1,6 @@
 import React from 'react';
 import {ITask} from '../../Interfaces';
-import '../../App.scss';
+import classes from './TodoTask.module.scss'
 
 interface Props {
     task: ITask;
@@ -9,8 +9,8 @@ interface Props {
 
 const TodoTask = ({task, completeTask}: Props) => {
     return (
-        <div className={"task"}>
-            <div className={"content"}>
+        <div className={classes.task}>
+            <div className={classes.content}>
                 <span>{task.taskName}</span>
                 <span>{task.tag}</span>
             </div>
