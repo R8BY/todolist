@@ -14,6 +14,7 @@ const TodoTask = ({task, completeTask,todoList}: Props) => {
         console.log(todoList);
         if (todoList.length-1 === 0){
             alert("Empty!");
+            document.location.href = "http://localhost:3000/";
         }
     }
 
