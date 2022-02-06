@@ -38,15 +38,17 @@ const App: FC = () => {
 
     return (
         <div className="App">
-            <BrowserRouter>
-                <Routes>
-                    <Route>
-                        <Route path="/" element={<HomePage handleChange={handleChange} addTask={addTask} tag={tag} task={task} todoList={todoList}/>}/>
-                        <Route path="items" element={<ItemsPage todoList={todoList} completeTask={completeTask}/>}/>
-                        <Route path="*" element={<BadPage/>}/>
-                    </Route>
-                </Routes>
-            </BrowserRouter>
+            <div>
+                <BrowserRouter>
+                    <Routes>
+                        <Route>
+                            <Route path="/" element={<HomePage handleChange={handleChange} addTask={addTask} tag={tag} task={task} todoList={todoList}/>}/>
+                            <Route path="items" element={<ItemsPage todoList={todoList} completeTask={completeTask}/>}/>
+                            <Route path="*" element={<BadPage/>}/>
+                        </Route>
+                    </Routes>
+                </BrowserRouter>
+            </div>
         </div>
     );
 }

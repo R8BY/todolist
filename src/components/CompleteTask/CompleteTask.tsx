@@ -4,23 +4,21 @@ import {TodoTask} from "../Header";
 import classes from './CompleteTask.module.scss'
 import '../../App.scss'
 import {GoToButton} from "../Buttons/GoToButton";
+import {SearchBar} from '../SearchBar'
 
-interface Props{
+interface Props {
     todoList: ITask[];
     completeTask(taskNameToDelete: string): void;
 }
 
-const CompleteTask = ({todoList, completeTask}:Props) => {
+const CompleteTask = ({todoList, completeTask}: Props) => {
     return (
-        <div className="App">
-            <div className={"header"}>
-                <div className={classes.todoList}>
-                    {todoList.map((task: ITask, key: number) => {
-                        return <TodoTask todoList={todoList} key={key} task={task} completeTask={completeTask}/>
-                    })}
-                    <GoToButton todoList={todoList} text={"Go To Home Page"} link={"/"}/>
-                </div>
-            </div>
+        <div className={classes.todoList}>
+            <SearchBar todoList={todoList}/>
+            {todoList.map((task: ITask, key: number) => {
+                return <TodoTask todoList={todoList} key={key} task={task} completeTask={completeTask}/>
+            })}
+            <GoToButton todoList={todoList} text={"Go To Home Page"} link={"/"}/>
         </div>
     );
 };

@@ -2,17 +2,17 @@ import React from 'react';
 import CompleteTask from "../../components/CompleteTask/CompleteTask";
 import {ITask} from "../../Interfaces";
 
-interface Props{
+interface Props {
     todoList: ITask[];
     completeTask(taskNameToDelete: string): void;
 }
 
-const ItemsPage = ({todoList, completeTask}:Props) => {
+const ItemsPage = ({todoList, completeTask}: Props) => {
     return (
-        <div>
+        <>
             <CompleteTask todoList={todoList} completeTask={completeTask}/>
-        </div>
+        </>
     );
 };
 
-export { ItemsPage };
+export {ItemsPage};
