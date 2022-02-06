@@ -1,10 +1,10 @@
 import React from 'react';
-// import classes from "./BadPage.module.scss";
+import classes from "./BadPage.module.scss";
 
 const BadPage = () => {
     return (
-        <div>
-            Глупый, пошёл нахуй
+        <div className={classes.BadPage}>
+            <h1>Глупый, пошёл нахуй</h1>
         </div>
     );
 };

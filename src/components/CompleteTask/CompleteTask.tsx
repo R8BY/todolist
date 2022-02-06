@@ -16,7 +16,7 @@ const CompleteTask = ({todoList, completeTask}:Props) => {
             <div className={"header"}>
                 <div className={classes.todoList}>
                     {todoList.map((task: ITask, key: number) => {
-                        return <TodoTask key={key} task={task} completeTask={completeTask}/>
+                        return <TodoTask todoList={todoList} key={key} task={task} completeTask={completeTask}/>
                     })}
                     <GoToButton todoList={todoList} text={"Go To Home Page"} link={"/"}/>
                 </div>

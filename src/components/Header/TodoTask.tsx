@@ -4,10 +4,19 @@ import classes from './TodoTask.module.scss'
 
 interface Props {
     task: ITask;
+    todoList: ITask[];
     completeTask(taskNameToDelete: string): void;
 }
 
-const TodoTask = ({task, completeTask}: Props) => {
+const TodoTask = ({task, completeTask,todoList}: Props) => {
+
+    const CheckEmptyTask = (todoList:any) => {
+        console.log(todoList);
+        if (todoList.length-1 === 0){
+            alert("Empty!");
+        }
+    }
+
     return (
         <div className={classes.task}>
             <div className={classes.content}>
@@ -16,7 +25,8 @@ const TodoTask = ({task, completeTask}: Props) => {
             </div>
             <button
                 onClick={(() => {
-                     completeTask(task.taskName)
+                     completeTask(task.taskName);
+                     CheckEmptyTask(todoList);
                 })}>
                 X
             </button>

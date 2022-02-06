@@ -17,6 +17,7 @@ const InputTask = ({handleChange, TaskValue, NameTask, Places}:Props) => {
                 name={NameTask}
                 value={TaskValue}
                 onChange={handleChange}
+                required
             />
         </div>
     );
