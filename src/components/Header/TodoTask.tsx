@@ -4,7 +4,6 @@ import '../../App.scss';
 
 interface Props {
     task: ITask;
-
     completeTask(taskNameToDelete: string): void;
 }
 

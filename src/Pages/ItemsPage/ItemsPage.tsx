@@ -1,10 +1,17 @@
 import React from 'react';
-import classes from "./ItemsPage.module.scss";
+// import classes from "./ItemsPage.module.scss";
+import CompleteTask from "../../components/CompleteTask/CompleteTask";
+import {ITask} from "../../Interfaces";
 
-const ItemsPage = () => {
+interface Props{
+    todoList: ITask[];
+    completeTask(taskNameToDelete: string): void;
+}
+
+const ItemsPage = ({todoList, completeTask}:Props) => {
     return (
         <div>
-            ItemsPage
+            <CompleteTask todoList={todoList} completeTask={completeTask}/>
         </div>
     );
 };

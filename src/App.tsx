@@ -1,7 +1,14 @@
 import React, {FC, ChangeEvent, useState} from 'react';
 import './App.scss';
 import {ITask} from "./Interfaces";
-import {TodoTask} from "./components/Header";
+import {
+    BrowserRouter,
+    Routes,
+    Route
+} from "react-router-dom";
+import {HomePage} from "./Pages/HomePage";
+import {ItemsPage} from './Pages/ItemsPage'
+import {BadPage} from "./Pages/404";
 
 const App: FC = () => {
     const [task, setTask] = useState<string>("");
@@ -31,30 +38,15 @@ const App: FC = () => {
 
     return (
         <div className="App">
-            <div className="header">
-                <div className="inputContainer">
-                    <input
-                        type="text"
-                        placeholder="Task..."
-                        name="task"
-                        value={task}
-                        onChange={handleChange}
-                    />
-                    <input
-                        type="text"
-                        placeholder="Tag or empty string..."
-                        name="tags"
-                        value={tag}
-                        onChange={handleChange}
-                    />
-                </div>
-                <button onClick={addTask}>Add Task</button>
-            </div>
-            <div className="todoList">
-                {todoList.map((task: ITask, key: number) => {
-                    return <TodoTask key={key} task={task} completeTask={completeTask}/>
-                })}
-            </div>
+            <BrowserRouter>
+                <Routes>
+                    <Route>
+                        <Route  path="/" element={<HomePage handleChange={handleChange} addTask={addTask} tag={tag} task={task}/>}/>
+                        <Route path="items" element={<ItemsPage todoList={todoList} completeTask={completeTask}/>}/>
+                        <Route path="*" element={<BadPage/>}/>
+                    </Route>
+                </Routes>
+            </BrowserRouter>
         </div>
     );
 }

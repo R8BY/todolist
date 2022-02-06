@@ -1,5 +1,5 @@
 import React from 'react';
-import classes from "./BadPage.module.scss";
+// import classes from "./BadPage.module.scss";
 
 const BadPage = () => {
     return (
