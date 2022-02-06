@@ -4,7 +4,7 @@ import React from 'react';
 const BadPage = () => {
     return (
         <div>
-            404
+            Глупый, пошёл нахуй
         </div>
     );
 };
