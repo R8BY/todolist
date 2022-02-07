@@ -14,7 +14,7 @@ const TodoTask = ({task, completeTask,todoList}: Props) => {
         console.log(todoList);
         if (todoList.length-1 === 0){
             alert("Empty!");
-            document.location.href = "http://localhost:3000/";
+            document.location.href = "/";
         }
     }
 
@@ -25,9 +25,9 @@ const TodoTask = ({task, completeTask,todoList}: Props) => {
                 <span>{task.tag}</span>
             </div>
             <button
-                onClick={(() => {
-                     completeTask(task.taskName);
-                     CheckEmptyTask(todoList);
+            onClick={(() => {
+                CheckEmptyTask(todoList);
+                completeTask(task.taskName);
                 })}>
                 X
             </button>

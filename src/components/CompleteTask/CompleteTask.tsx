@@ -14,7 +14,6 @@ interface Props {
 const CompleteTask = ({todoList, completeTask}: Props) => {
     return (
         <div className={classes.todoList}>
-            <SearchBar todoList={todoList}/>
             {todoList.map((task: ITask, key: number) => {
                 return <TodoTask todoList={todoList} key={key} task={task} completeTask={completeTask}/>
             })}
